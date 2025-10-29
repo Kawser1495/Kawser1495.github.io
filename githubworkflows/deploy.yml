@@ -1,15 +1,22 @@
-portfolio/
-│
-├─ index.html
-├─ about.html
-├─ activities.html
-├─ profiles.html
-├─ education.html
-├─ contact.html
-├─ style.css
-├─ highlights.json
-├─ tags.json
-├─ deploy.yml          (GitHub Actions)
-└─ assets/
-     ├─ profile.jpg
-     └─ Cv Kawser Talukder.pdf
+name: Deploy Portfolio
+
+on:
+  push:
+    branches:
+      - main  # Make sure your default branch is main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: .
