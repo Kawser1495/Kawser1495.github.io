@@ -47,7 +47,7 @@
         <div class="hero-content">
             <div class="hero-image">
                 <div class="image-container">
-                    <img src="c:\Users\ktl14\Downloads\WhatsApp Image 2025-10-16 at 12.05.44_40d5cc6e.jpg" alt="MD. KAWSER TALUKDER" class="hero-photo">
+                    <img src="c:\Users\ktl14\Downloads\WhatsApp Image 2025-10-16 at 12.05.44_40d5cc6e.jpg" alt="Kawser Talukder" class="hero-photo">
                     <div class="image-overlay"></div>
                 </div>
             </div>
@@ -60,10 +60,10 @@
                 </div>
                 <div class="career-objective">
                     <h2 class="career-objective-title">Career Objective</h2>
-                    <p> 🔥Go where the Universe takes.</p>
-                    <p> 🔥Go where your dreams breathe.</p>
-                    <p> 🔥Building Smarter Tomorrow.</p>
-                    <p> 🔥Turning Data into Knowledge.</p>
+                    <p>🔥Go where the Universe takes.</p>
+                    <p>🔥Go where your dreams breathe.</p>
+                    <p>🔥Building Smarter Tomorrow.</p>
+                    <p>🔥Turning Data into Knowledge.</p>
                 </div>
             </div>
         </div>
@@ -104,7 +104,7 @@
         }
 
         // Fetch and render highlights
-        fetch('json/highlights.json')
+        fetch('/json/highlights.json')
             .then(response => response.json())
             .then(data => {
                 const container = document.getElementById('highlights-container');
@@ -123,7 +123,7 @@
             });
 
         // Fetch and render tags
-        fetch('json/tags.json')
+        fetch('/json/tags.json')
             .then(response => response.json())
             .then(tags => {
                 const tagsContainer = document.getElementById('hero-tags');
