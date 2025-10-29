@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Kawser Talukder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Compact hero similar to contests page */
+        .hero { padding-top: 0; padding-bottom: 0; min-height: 35vh; }
+        .hero-content.compact-hero { padding: 0; }
+        .hero-text { display: flex; flex-direction: column; align-items: center; }
+        .name-container h1 { margin: 0; }
+        .career-objective { margin: 0; }
+        .career-objective p { text-align: center; margin: 0; }
+        #download {
+            background-color: var(--primary);
+            color: var(--dark-bg);
+            font-weight: normal;
+            padding: 2px 15px;
+            border-radius: 4px;
+        }
+        #download:hover {
+            text-decoration: none;
+            background-color: white;
+        }
+        #download:hover::after {
+            width: 0;
+            height: 0;
+            transition: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="activities.html">Activities</a>
+            <a href="profiles.html">Profiles</a>
+            <a href="education.html">Education</a>
+            <a href="contact.html">Contact</a>
+            <a id="download" href="assets/Cv_Kawser_Talukder.pdf" download>CV</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content compact-hero">
+            <div class="hero-text">
+                <div class="name-container">
+                    <h1>MD. KAWSER TALUKDER</h1>
+                </div>
+                <div class="career-objective">
+                    <p>Machine Learning Engineer with a growth mindset.</p>
+                    <p>👇 Learning every day, building for tomorrow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="neon-divider"></div>
+
+    <section class="content-section">
+        <div class="section-title">About</div>
+        <div class="highlights new-cards">
+            <div class="highlight-card big-card">
+                <div class="card-content">
+                    <div class="highlight-title">About Me:</div>
+                    <div class="highlight-desc">
+                        <p>
+                            Hi! I'm Kawser Talukder, a Computer Science and Engineering student at the International University of Business Agriculture and Technology (IUBAT).    
+                            I'm passionate about Machine Learning and AI-driven problem solving.
+                        </p>
+                        <p>
+                            I enjoy turning ideas into working systems — learning through building, experimenting, and improving. 
+                            My academic interests center around algorithms, data-driven design, and intelligent systems.
+                        </p>
+                        <p>
+                            Outside academics, I love contributing to open-source projects, collaborative learning communities, 
+                            and small research explorations that help me grow as an engineer and thinker.
+                        </p>
+                        <p>
+                            My goal is simple — keep learning, keep building, and shape intelligent solutions that make a real impact.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Thank you for visiting my Portfolio! &copy; 2025 MD. Kawser Talukder. All rights reserved.
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navbar = document.getElementById('navbar');
+        if (navToggle && navbar) {
+            navToggle.addEventListener('click', () => {
+                navbar.classList.toggle('nav-open');
+                navToggle.classList.toggle('open');
+            });
+            navbar.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navbar.classList.contains('nav-open')) {
+                        navbar.classList.remove('nav-open');
+                        navToggle.classList.remove('open');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
