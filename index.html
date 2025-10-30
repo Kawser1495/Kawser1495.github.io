@@ -34,7 +34,7 @@
             <a href="profiles.html">Profiles</a>
             <a href="education.html">Education</a>
             <a href="contact.html">Contact</a>
-            <a id="download" href="assets/d:\Documents\Cv Kawser Talukder.pdf" download>CV</a>
+            <a id="download" href="E:\Kawser1495.github.io\CV\Cv Kawser Talukder.pdf" download>CV</a>
         </nav>
         <button class="nav-toggle" aria-label="Toggle navigation">
             <span></span>
@@ -47,7 +47,7 @@
         <div class="hero-content">
             <div class="hero-image">
                 <div class="image-container">
-                    <img src="d:\Documents\assetsCv_Kawser_Talukder.pdf.pdf" alt="Kawser Talukder" class="hero-photo">
+                    <img src="E:\Kawser1495.github.io\CV\Kawser.jpg" alt="Kawser Talukder" class="hero-photo">
                     <div class="image-overlay"></div>
                 </div>
             </div>
@@ -104,7 +104,7 @@
         }
 
         // Fetch and render highlights
-        fetch('json/highlights.json')
+        fetch('./json/highlights.json')
             .then(response => response.json())
             .then(data => {
                 const container = document.getElementById('highlights-container');
@@ -123,7 +123,7 @@
             });
 
         // Fetch and render tags
-        fetch('json/tags.json')
+        fetch('./json/tags.json')
             .then(response => response.json())
             .then(tags => {
                 const tagsContainer = document.getElementById('hero-tags');
