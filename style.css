@@ -359,173 +359,137 @@ footer {
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-:root {
-  --bg: #0a0f2c;
-  --cyan: #00ffff;
-  --muted: #b8c6ff;
-  --card-bg: rgba(0, 255, 255, 0.06);
-}
-
-* {
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: var(--bg);
-  color: #fff;
+  background-color: #0a0f2c;
+  color: white;
+  text-align: center;
 }
 
 /* Navbar */
 .navbar {
-  padding: 18px 30px;
+  background-color: transparent;
+  padding: 20px 0;
+}
+
+.navbar ul {
+  list-style: none;
   display: flex;
   justify-content: center;
   gap: 30px;
-  align-items: center;
+  padding: 0;
 }
 
 .navbar a {
-  color: var(--muted);
+  color: #b8c6ff;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   transition: color 0.3s;
 }
 
 .navbar a:hover {
-  color: #fff;
+  color: #ffffff;
 }
 
 .cv-btn {
-  border: 1px solid var(--cyan);
-  padding: 6px 12px;
+  border: 1px solid #00ffff;
+  padding: 6px 14px;
   border-radius: 8px;
-  color: var(--cyan);
+  color: #00ffff;
   transition: 0.3s;
-  font-weight: 600;
 }
 
 .cv-btn:hover {
-  background: var(--cyan);
-  color: var(--bg);
-  box-shadow: 0 0 15px var(--cyan);
+  background-color: #00ffff;
+  color: #0a0f2c;
+  box-shadow: 0 0 15px #00ffff;
 }
 
 /* Hero Section */
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  padding: 50px 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 80px 20px 40px 20px;
 }
 
 .profile-pic img {
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  border: 3px solid var(--cyan);
+  border: 3px solid #00ffff;
   object-fit: cover;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
-.hero-text {
-  text-align: left;
+.hero h1 {
+  margin-top: 25px;
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
 }
 
-.hero-text h1 {
-  font-size: 48px;
-  font-weight: 800;
-  margin: 0 0 15px;
-  color: #fff;
-  text-transform: uppercase;
-}
-
-/* Tag buttons */
+/* Tag Boxes (for skills / titles) */
 .tags {
+  margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 20px;
 }
 
 .tags span {
-  border: 1px solid rgba(0, 255, 255, 0.4);
+  background-color: rgba(0, 255, 255, 0.08);
+  border: 1px solid #00ffff;
   border-radius: 10px;
-  padding: 8px 14px;
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 600;
-  transition: 0.3s;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  padding: 8px 16px;
+  color: #00ffff;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  transition: all 0.3s ease;
 }
 
 .tags span:hover {
-  background: var(--cyan);
-  color: var(--bg);
-  transform: translateY(-3px);
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-}
-
-/* Info Box */
-.info-box {
-  background: var(--card-bg);
-  border: 1px solid rgba(0, 255, 255, 0.2);
-  border-radius: 12px;
-  padding: 12px 18px;
-  color: var(--muted);
-  font-weight: 500;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
-  max-width: 700px;
-  animation: pulseGlow 3s ease-in-out infinite;
-}
-
-@keyframes pulseGlow {
-  0% {
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
-  }
-  50% {
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
-  }
-  100% {
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
-  }
+  background-color: #00ffff;
+  color: #0a0f2c;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffff;
 }
 
 /* Career Objective */
 .career {
-  margin-top: 25px;
+  margin-top: 50px;
 }
 
 .career h3 {
-  color: var(--cyan);
-  margin-bottom: 8px;
-  font-size: 18px;
-  font-weight: 700;
+  color: #00ffff;
+  margin-bottom: 10px;
+  font-size: 20px;
 }
 
 .career p {
-  margin: 0;
-  color: #e8ecff;
+  color: #b8c6ff;
+  font-size: 16px;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
+/* Highlights Section */
+.highlights {
+  margin-top: 80px;
+  padding-bottom: 60px;
+}
 
-  .hero-text {
-    text-align: center;
-  }
+.highlights h2 {
+  color: #ffffff;
+  font-size: 28px;
+  border-bottom: 2px solid #00ffff;
+  display: inline-block;
+  padding-bottom: 6px;
+}
 
-  .hero-text h1 {
-    font-size: 36px;
-  }
+.highlights p {
+  margin-top: 20px;
+  color: #b8c6ff;
 }
