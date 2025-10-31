@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Kawser Talukder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero { padding-top: 0; padding-bottom: 0; min-height: 35vh; }
+        .hero-content.compact-hero { padding: 0; }
+        .hero-text { display: flex; flex-direction: column; align-items: center; }
+        .name-container h1 { margin: 0; }
+        .career-objective { margin: 0; }
+        .career-objective p { text-align: center; margin: 0; }
+        #download {
+            background-color: var(--primary);
+            color: var(--dark-bg);
+            font-weight: normal;
+            padding: 2px 15px;
+            border-radius: 4px;
+        }
+        #download:hover {
+            text-decoration: none;
+            background-color: white;
+        }
+        #download:hover::after { width: 0; height: 0; transition: none; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .contact-row { display: flex; flex-direction: column; gap: 12px; }
+        .contact-link { text-decoration: none; }
+        .contact-link .card-proof-link { margin-top: 8px; display: inline-block; color: var(--primary); }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="activities.html">Activities</a>
+            <a href="profiles.html">Profiles</a>
+            <a href="education.html">Education</a>
+            <a href="contact.html">Contact</a>
+            <a id="download" href="assets\image\Cv_Kawser_Talukder.pdf" download>CV</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content compact-hero">
+            <div class="hero-text">
+                <div class="name-container">
+                    <h1>Contact</h1>
+                </div>
+                <div class="career-objective">
+                    <p>Open to opportunities, collaborations, and interesting problems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="neon-divider"></div>
+
+    <section class="content-section">
+        <div class="section-title">Get in Touch</div>
+        <div class="highlights new-cards contact-grid" id="contact-grid"></div>
+    </section>
+
+    <footer>
+        Thank you for visiting my Portfolio! &copy; 2025 MD. Kawser Talukder. All rights reserved.
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navbar = document.getElementById('navbar');
+        if (navToggle && navbar) {
+            navToggle.addEventListener('click', () => {
+                navbar.classList.toggle('nav-open');
+                navToggle.classList.toggle('open');
+            });
+            navbar.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navbar.classList.contains('nav-open')) {
+                        navbar.classList.remove('nav-open');
+                        navToggle.classList.remove('open');
+                    }
+                });
+            });
+        }
+
+        const contacts = [
+            { title: 'Email', subtitle: 'Primary communication channel', desc: 'ktl149516@gmail.com', href: 'mailto:ktl149516@gmail.com' },
+            { title: 'Phone', subtitle: 'WhatsApp Available', desc: '+88 01646381642', href: 'tel:+8801646381642' },
+            { title: 'Github', subtitle: 'Github Available', desc: 'Kawser1495', href: 'https://github.com/Kawser1495' },
+            { title: 'LinkedIn', subtitle: 'LinkedIn Available', desc: 'Kawser Talukder', href: 'https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=kawser1495' },
+            { title: 'Facebook', subtitle: 'Facebook Available', desc: 'Kawser Talukder', href: 'https://www.facebook.com/kawser.talukder.90' }
+        ];
+
+        const grid = document.getElementById('contact-grid');
+        grid.innerHTML = contacts.map(item => `
+            <div class="highlight-card big-card">
+                <div class="card-content">
+                    <div class="highlight-title">${item.title}</div>
+                    <div class="highlight-subtitle">${item.subtitle}</div>
+                    <div class="highlight-desc">${item.desc}</div>
+                    <a class="card-proof-link" href="${item.href}" target="_blank" rel="noopener">Open</a>
+                </div>
+            </div>
+        `).join('');
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profiles - Kawser Talukder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero { padding-top: 0; padding-bottom: 0; min-height: 35vh; }
+        .hero-content.compact-hero { padding: 0; }
+        .hero-text { display: flex; flex-direction: column; align-items: center; }
+        .name-container h1 { margin: 0; }
+        .career-objective { margin: 0; }
+        .career-objective p { text-align: center; margin: 0; }
+        #download {
+            background-color: var(--primary);
+            color: var(--dark-bg);
+            font-weight: normal;
+            padding: 2px 15px;
+            border-radius: 4px;
+        }
+        #download:hover {
+            text-decoration: none;
+            background-color: white;
+        }
+        #download:hover::after {
+            width: 0;
+            height: 0;
+            transition: none;
+        }
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .profile-card { text-decoration: none; color: inherit; }
+        .profile-card .highlight-title { margin-bottom: 0.6rem; }
+        .wide-card .card-content { padding: 32px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="activities.html">Activities</a>
+            <a href="profiles.html">Profiles</a>
+            <a href="education.html">Education</a>
+            <a href="contact.html">Contact</a>
+            <a id="download" href="assets\image\Cv_Kawser_Talukder.pdf" download>CV</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content compact-hero">
+            <div class="hero-text">
+                <div class="name-container">
+                    <h1>Profiles</h1>
+                </div>
+                <div class="career-objective">
+                    <p>Find me on online judges and professional networks where I grow and contribute.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="neon-divider"></div>
+
+    <section class="content-section">
+        <div class="section-title">Online Judges</div>
+        <div class="highlights new-cards profiles-grid" id="oj-grid"></div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-title">Professional</div>
+        <div class="highlights new-cards profiles-grid" id="pro-grid"></div>
+    </section>
+
+    <footer>
+        Thank you for visiting my Portfolio! &copy; 2025 MD. Kawser Talukder. All rights reserved.
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navbar = document.getElementById('navbar');
+        if (navToggle && navbar) {
+            navToggle.addEventListener('click', () => {
+                navbar.classList.toggle('nav-open');
+                navToggle.classList.toggle('open');
+            });
+            navbar.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navbar.classList.contains('nav-open')) {
+                        navbar.classList.remove('nav-open');
+                        navToggle.classList.remove('open');
+                    }
+                });
+            });
+        }
+
+        const onlineJudges = [
+            { name: 'GitHub Projects', handle: 'Kawser1495', url: 'https://github.com/Kawser1495/ML_Learn_With_Python.git', desc: 'Find me on platforms where I build, share, and grow as a Machine Learning enthusiast.' },
+            { name: 'Online Shop System', handle: 'Kawser1495', url: 'https://github.com/Kawser1495/Online_Shop_System.git', desc: '🔗 Passionate about innovation, teamwork, and lifelong growth.' }
+        ];
+
+        const professional = [
+            { name: 'GitHub', handle: 'Kawser1495', url: 'https://github.com/Kawser1495', desc: 'Projects, experiments, and open source.' },
+            { name: 'LinkedIn', handle: 'Kawser Talukder', url: 'https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=kawser1495', desc: 'Experience, achievements, and networking.' },
+            { name: 'Facebook', handle: 'Kawser Talukder', url: 'https://www.facebook.com/kawser.talukder.90', desc: 'Connecting, sharing growth, and staying inspired.' }
+        ];
+
+        function cardHtml(item) {
+            return `
+                <a href="${item.url}" target="_blank" rel="noopener" class="profile-card">
+                    <div class="highlight-card big-card wide-card">
+                        <div class="card-content">
+                            <div class="highlight-title">${item.name}</div>
+                            <div class="highlight-subtitle">${item.handle}</div>
+                            <div class="highlight-desc">${item.desc}</div>
+                        </div>
+                    </div>
+                </a>
+            `;
+        }
+
+        document.getElementById('oj-grid').innerHTML = onlineJudges.map(cardHtml).join('');
+        document.getElementById('pro-grid').innerHTML = professional.map(cardHtml).join('');
+    </script>
+</body>
+</html>

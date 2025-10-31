@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities - Kawser Talukder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero { padding-top: 0; padding-bottom: 0; min-height: 35vh; }
+        .hero-content.compact-hero { padding: 0; }
+        .hero-text { display: flex; flex-direction: column; align-items: center; }
+        .name-container h1 { margin: 0; }
+        .career-objective { margin: 0; }
+        .career-objective p { text-align: center; margin: 0; }
+        #download {
+            background-color: var(--primary);
+            color: var(--dark-bg);
+            font-weight: normal;
+            padding: 2px 15px;
+            border-radius: 4px;
+        }
+        #download:hover {
+            text-decoration: none;
+            background-color: white;
+        }
+        #download:hover::after {
+            width: 0;
+            height: 0;
+            transition: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="activities.html">Activities</a>
+            <a href="profiles.html">Profiles</a>
+            <a href="education.html">Education</a>
+            <a href="contact.html">Contact</a>
+            <a id="download" href="assets\image\Cv_Kawser_Talukder.pdf" download>CV</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content compact-hero">
+            <div class="hero-text">
+                <div class="name-container">
+                    <h1>Activities</h1>
+                </div>
+                <div class="career-objective">
+                    <p>Passionate CSE student exploring Machine Learning, innovation, and real-world problem solving.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="neon-divider"></div>
+
+    <section class="content-section">
+        <div class="section-title">🤖 Machine Learning Exploration</div>
+        <div class="highlights new-cards" id="activities-exploration"></div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-title">🧭 Volunteer - Fresher Orientation Program, IUBAT (2023)</div>
+        <div class="highlights new-cards" id="activities-volunteer"></div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-title">💻 Project Implementation</div>
+        <div class="highlights new-cards" id="activities-project"></div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-title">📈 Continuous Skill Growth</div>
+        <div class="highlights new-cards" id="activities-skill"></div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-title">📊 Data Analysis & Research</div>
+        <div class="highlights new-cards" id="activities-researcher"></div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-title">🚀 Continuous Learning Mindset</div>
+        <div class="highlights new-cards" id="activities-mindset"></div>
+    </section>
+
+    <footer>
+        Thank you for visiting my Portfolio! &copy; 2025 MD. Kawser Talukder. All rights reserved.
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navbar = document.getElementById('navbar');
+        if (navToggle && navbar) {
+            navToggle.addEventListener('click', () => {
+                navbar.classList.toggle('nav-open');
+                navToggle.classList.toggle('open');
+            });
+            navbar.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navbar.classList.contains('nav-open')) {
+                        navbar.classList.remove('nav-open');
+                        navToggle.classList.remove('open');
+                    }
+                });
+            });
+        }
+
+        const explorationData = [
+            {
+                desc: 'Exploring the foundations of Artificial Intelligence and Machine Learning, focusing on supervised and unsupervised algorithms, model optimization, and real-world data applications.'
+            }
+        ];
+
+        const volunteerData = [
+            {
+                desc: 'Supported event coordination and welcomed new students during IUBAT 2023 Fresher Orientation Program.'
+            }
+        ];
+
+        const projectData = [
+            {
+                desc: 'Designing and implementing data-driven projects using Python, Pandas, Scikit-learn, and TensorFlow — transforming theoretical knowledge into practical outcomes.'
+            }
+        ];
+
+        const skillData = [
+            {
+                desc: 'Actively improving technical proficiency in Python, Pandas, Scikit-learn, and TensorFlow, while learning data visualization and analytical thinking.'
+            }
+        ];
+
+        const researcherData = [
+            {
+                desc: 'Working with structured datasets to perform data cleaning, visualization, and predictive modeling, while analyzing patterns to extract meaningful insights.'
+            }
+        ];
+
+        const mindsetData = [
+            {
+                desc: 'Committed to lifelong learning through online courses, research papers, and project-based exploration — growing step-by-step toward becoming a Machine Learning Engineer.'
+            }
+        ];
+
+        function renderCards(containerId, items) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            container.innerHTML = items.map(item => `
+                <div class="highlight-card big-card">
+                    <div class="card-content">
+                        <div class="highlight-desc">${item.desc}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        renderCards('activities-exploration', explorationData);
+        renderCards('activities-volunteer', volunteerData);
+        renderCards('activities-project', projectData);
+        renderCards('activities-skill', skillData);
+        renderCards('activities-researcher', researcherData);
+        renderCards('activities-mindset', mindsetData);
+    </script>
+</body>
+</html>
